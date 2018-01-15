@@ -9,8 +9,8 @@ A simple restart plugin
 # Credits
 
 David:
-[GitHub](https://github.com/diamondgamermcpe)
-<br />[Twitter](https://twitter.com/DavidGamingzz)
+<br />GitHub: https://github.com/diamondgamermcpe
+<br />Twitter: https://twitter.com/DavidGamingzz
 
 # Default Config
 
