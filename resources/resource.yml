@@ -2,16 +2,17 @@
 # Time to restart
 # Minutes
 
-Time: 60
+Time: 2
 
 # Message that pops up
 # Use {time} to show time
+# Use § to add color
 
-Popup: "Server will restart in {time} minutes"
+Popup: "§7Server will restart in §a{time}"
 
 # Message that will be sent when restart
 
-Kick Message: "Server has restarted!"
+Kick Message: "§aServer has restarted!"
 
 # Credits:
 # GitHub: https://github.com/diamondgamermcpe
