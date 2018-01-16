@@ -18,6 +18,6 @@ class Loader extends PluginBase {
 		$this->getServer()->getLogger()->notice("AutoRestart was enabled by David!");
 		$this->getServer()->getLogger()->notice("GitHub: https://github.com/diamondgamermcpe");
 		$this->getServer()->getLogger()->notice("Twitter: https://twitter.com/DavidGamingzz");
-		$this->getServer()->getScheduler()->scheduleRepeatingTask(new RestartTask($this), 60*20);
+		$this->getServer()->getScheduler()->scheduleRepeatingTask(new RestartTask($this), 20);
     }
 }
