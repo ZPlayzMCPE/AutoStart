@@ -2,7 +2,7 @@
 # Time to restart
 # Minutes
 
-Time: 2
+Time: 60
 
 # Message that pops up
 # Use {time} to show time
