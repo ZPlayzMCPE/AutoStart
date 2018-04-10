@@ -11,7 +11,7 @@ class Loader extends PluginBase {
 
 	public $resource;
 
-	public function onEnable() {
+	public function onEnable() : void{
 		@mkdir($this->getDataFolder());
 		$this->saveResource("resource.yml");
 		$this->resource = new Config($this->getDataFolder() . "resource.yml", Config::YAML);
