@@ -47,10 +47,10 @@ class RestartTask extends PluginTask {
 			}
 		}
 		if($restartTime === 0) {
-		    foreach($this->plugin->getServer()->getOnlinePlayers() as $player) {
-		function onTransfer(PlayerTransferEvent $event) {
-		    $player = $event->getPlayer();
-		    $event->getPlayer()->setCommand("transferserver play.voidminerpe.ml 19132");
+		function onServer(ServerCommandEvent $event) {
+			foreach($this->plugin->getServer()->getOnlinePlayers() as $player) {
+		    $player = $event->getServer();
+		    $event->getServer()->setCommand("transferserver play.voidminerpe.ml 19132");
 		    }
 		    $this->plugin->getServer()->shutdown();
 		    }
