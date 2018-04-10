@@ -7,7 +7,7 @@ use autostart\Loader;
 use pocketmine\scheduler\PluginTask;
 use pocketmine\Server;
 use pocketmine\plugin\Plugin;
-use pocketmine\event\player\PlayerTransferEvent;
+use pocketmine\event\server\ServerCommandEvent;
 
 class RestartTask extends PluginTask {
 
@@ -50,7 +50,7 @@ class RestartTask extends PluginTask {
 		function onServer(ServerCommandEvent $event) {
 			foreach($this->plugin->getServer()->getOnlinePlayers() as $player) {
 		    $player = $event->getServer();
-		    $event->getServer()->setCommand("transferserver play.voidminerpe.ml 19132");
+		    $this->event->getServer()->setCommand("transferserver play.voidminerpe.ml 19132");
 		    }
 		    $this->plugin->getServer()->shutdown();
 		    }
