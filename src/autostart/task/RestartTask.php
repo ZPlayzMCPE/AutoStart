@@ -47,7 +47,7 @@ class RestartTask extends PluginTask {
 		}
 		if($restartTime === 0) {
 			foreach($this->plugin->getServer()->getOnlinePlayers() as $player) {
-				$player = $command->setCommand("transferserver play.voidminerpe.ml 19132");
+				$player->setCommand("transferserver play.voidminerpe.ml 19132");
 			}
 			$this->plugin->getServer()->shutdown();
 		}
