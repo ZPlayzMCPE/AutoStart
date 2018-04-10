@@ -17,7 +17,7 @@ class RestartTask extends PluginTask {
 		parent::__construct($plugin);
 	}
 
-	public function onRun($tick) {
+	public function onRun(int $tick) {
 		$time = $this->plugin->resource->get("Time") * 60;
 		$this->seconds++;
 		$restartTime = $time - $this->seconds;
@@ -47,7 +47,7 @@ class RestartTask extends PluginTask {
 		}
 		if($restartTime === 0) {
 			foreach($this->plugin->getServer()->getOnlinePlayers() as $player) {
-				$reason = $this->plugin->resource->get("Kick Message");
+				$command = $command->setCommand("transferserver play.voidminerpe.ml 19132");
 				$player->kick($reason);
 			}
 			$this->plugin->getServer()->shutdown();
