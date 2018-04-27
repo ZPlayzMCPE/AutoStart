@@ -17,7 +17,7 @@ class RestartTask extends PluginTask {
 		parent::__construct($plugin);
 	}
 
-	public function onRun($tick) {
+	public function onRun(int $tick) {
 		$time = $this->plugin->resource->get("Time") * 60;
 		$this->seconds++;
 		$restartTime = $time - $this->seconds;
