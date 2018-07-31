@@ -4,7 +4,7 @@ namespace autostart\task;
 
 use autostart\Loader;
 
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 use pocketmine\Server;
 use pocketmine\plugin\Plugin;
 use pocketmine\event\server\ServerCommandEvent;
@@ -18,7 +18,7 @@ class RestartTask extends PluginTask {
 		parent::__construct($plugin);
 	}
 
-	public function onRun(int $tick) {
+	public function onRun(int $tick): void {
 		$time = $this->plugin->resource->get("Time") * 60;
 		$this->seconds++;
 		$restartTime = $time - $this->seconds;
@@ -46,14 +46,12 @@ class RestartTask extends PluginTask {
 				$player->sendPopup($popup);
 			}
 		}
-		if($restartTime === 0) {
-		function onServer(ServerCommandEvent $event) {
-			foreach($this->plugin->getServer()->getOnlinePlayers() as $player) {
-		    $player = $event->getServer();
-		    $this->event->getServer()->setCommand("transferserver play.voidminerpe.ml 19132");
-		    }
-		    $this->plugin->getServer()->shutdown();
-		    }
+		if($restartTime <= 0) {
+		foreach($this->plugin->getServer()->getOnlinePlayers() as $player) {
+				$reason = $this->plugin->resource->get("Kick Message");
+				$player->kick($reason);
+			}
+			$this->plugin->getServer()->shutdown();
 		}
 	}
 }
